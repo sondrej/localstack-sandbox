@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  localstack:
+    container_name: "localstack_sandbox"
+    build:
+      context: ./
+      dockerfile: ./localstack/Dockerfile
+    environment:
+      - EDGE_PORT=4566
+      - SERVICES=s3,sns,sqs
+      - DEBUG=1
+      - AWS_DEFAULT_REGION=eu-west-1
+      - AWS_REGION=eu-west-1
+    ports:
+      - "4566:4566"
+    volumes:
+      - ./localstack/init:/etc/localstack/init/ready.d

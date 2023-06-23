@@ -1,0 +1,17 @@
+*.swp
+.DS_Store
+Thumbs.db
+
+node_modules/
+dist/
+.reports/
+.vscode/
+.idea/
+
+yarn-error.log
+
+.env.local
+.env-local
+coverage
+.serverless
+infra/read.23752.lock
